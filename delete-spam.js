@@ -1,21 +1,62 @@
-var deleteButton = document.querySelector('.container.delete'),
-    nextButton   = document.querySelector('.fill_height.next');
+var deleteButton = document.querySelector('.container.delete');
+var nextButton = document.querySelector('.fill_height.next');
+var keepDeleting = true;
+var itemsToDelete = {
+  'Hoss Tools': true,
+  'Mantis France': true,
+  'WordPress': true,
+  'Famous Cookies': true,
+  'Elevate Hemp': true,
+  'Oakes Wholesale': true,
+  'Famous 4th Street Cookies': true,
+  'webadmin@ink-it.net': true,
+  'Bradford White': true,
+  'Oakes Daylilies': true,
+  'IABCN': true,
+  'Zapier': true,
+  'ACXChange Support': true,
+  'Stevesleaves.com': true,
+  'PsPrint': true,
+  'WP Engine': true,
+  'Fiverr': true,
+  'Vimeo': true,
+  'Yelp – Philadelphia': true,
+  'WooCommerce': true,
+  'Trello': true,
+  'Bethany from Amasty': true
+};
 
 function deleteSpam() {
-  var mailNode = document.querySelector('div.resize_overflow > table > tbody').children,
-      mailList = Array.from(mailNode);
-      
-  mailList.forEach(item => {
-    var checkBox = item.querySelector('.checkbox_field input'),
-        title    = item.querySelector('.from_addr span');
+  keepDeleting = false;
 
-    if (title.innerText === 'Hoss Tools') {
-        checkBox.checked = true;
+  // Get current list of mail items
+  var mailNode = document.querySelector('div.Widgets_Email_Grid div.resize_overflow > table > tbody').children;
+  var mailList = Array.from(mailNode);
+
+  // Go through and mark items for deletion
+  mailList.forEach(item => {
+    var checkBox = item.querySelector('.checkbox_field input');
+    var title = item.querySelector('.from_addr span').innerText;
+    var subject = item.querySelector('.sorted_by_received > .row2 .subject.items_left .Email_draggable').innerText.toLowerCase();
+
+    if (itemsToDelete[title] ||
+      subject.includes('submission') ||
+      subject.includes('contact') ||
+      subject.includes('newsletter') ||
+      subject.includes('lead')) {
+      keepDeleting = true;
+
+      checkBox.checked = true;
+      checkBox.click();
     }
   });
-  
-  deleteButton.click();
-  nextButton.click();
-}
 
-deleteSpam();
+  // Choose whether to delete items or move to next 'page' of mail items
+  if (keepDeleting === false) {
+    nextButton.click();
+  } else {
+    deleteButton.click();
+  }
+
+  setTimeout(deleteSpam, 5000);
+}
