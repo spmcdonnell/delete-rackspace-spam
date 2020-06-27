@@ -4,6 +4,7 @@ var keepDeleting = true;
 var itemsToDelete = {
   'Hoss Tools': true,
   'Mantis France': true,
+  'Mantis': true,
   'WordPress': true,
   'Famous Cookies': true,
   'Elevate Hemp': true,
@@ -23,7 +24,13 @@ var itemsToDelete = {
   'Yelp – Philadelphia': true,
   'WooCommerce': true,
   'Trello': true,
-  'Bethany from Amasty': true
+  'Bethany from Amasty': true,
+  'Stagestep': true,
+  'nathaniel.forbes@locationshawaii.com': true,
+  'SparkPost Team': true,
+  'Dev Think IT': true,
+  'Asana': true,
+  'The Events Calendar': true
 };
 
 function deleteSpam() {
@@ -43,7 +50,8 @@ function deleteSpam() {
       subject.includes('submission') ||
       subject.includes('contact') ||
       subject.includes('newsletter') ||
-      subject.includes('lead')) {
+      subject.includes('lead') ||
+      subject.includes('comment')) {
       keepDeleting = true;
 
       checkBox.checked = true;
@@ -58,5 +66,5 @@ function deleteSpam() {
     deleteButton.click();
   }
 
-  setTimeout(deleteSpam, 5000);
+  setTimeout(deleteSpam, 6500);
 }
