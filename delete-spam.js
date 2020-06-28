@@ -1,7 +1,7 @@
 var deleteButton = document.querySelector('.container.delete');
 var nextButton = document.querySelector('.fill_height.next');
 var keepDeleting = true;
-var itemsToDelete = {
+var senders = {
   'Hoss Tools': true,
   'Mantis France': true,
   'Mantis': true,
@@ -30,10 +30,65 @@ var itemsToDelete = {
   'SparkPost Team': true,
   'Dev Think IT': true,
   'Asana': true,
-  'The Events Calendar': true
+  'The Events Calendar': true,
+  'The Events Calendar Team': true,
+  'WP Engine System': true,
+  'WP Engine Team': true,
+  'Mail Delivery System': true,
+  'The Content Team | Talkroute': true,
+  'InstantSearch+': true,
+  'PowerCorpsPHL': true,
+  'WP Engine Billing (billing@billing.wpengine.com)': true,
+  'OptinMonster': true,
+  'WP All Import': true,
+  'Steph at Asana': true,
+  'Fun Times Magazine': true,
+  'Tkey@hosstools.com': true,
+  'Amazon Web Services': true,
+  'Google': true,
+  'Zapier Monthly': true,
+  'bioRemediesMD': true,
+  'Jeffrey Shapiro': true,
+  'bioREMEDIES MD': true,
+  'bioREMEDIES': true,
+  'Think-IT': true,
+  'South Street Headhouse District': true,
+  'IgniteWoo.com': true,
+  'Ride Entertainment': true,
+  'Elevate': true,
+  'Dropbox': true,
+  'Yelp': true,
+  'The Veem Team': true,
+  'ThinkIT Agency': true,
+  'Octo Design Group': true,
+  'Mantis UK': true,
+  'The LogMeIn Team': true,
+  'Steve\'s Leaves': true,
+  'Italy-America Business Council and Network': true,
+  'How To Compost': true,
+  'IgniteWoo': true,
+  'The Homestead Box': true,
+  'Ink It Digital': true,
+  'ink IT': true,
+  'Mailchimp Legal': true,
+  'SparkPost': true,
+  'Tina Phillips': true
 };
+var keywords = [
+  'submission',
+  'contact',
+  'newsletter',
+  'lead',
+  'comment',
+  'disk usage warning',
+  'reservations',
+  '[spam]',
+  'optinmonster',
+  'automatic',
+  'something i think you'
+];
 
-function deleteSpam() {
+(function deleteSpam() {
   keepDeleting = false;
 
   // Get current list of mail items
@@ -43,15 +98,16 @@ function deleteSpam() {
   // Go through and mark items for deletion
   mailList.forEach(item => {
     var checkBox = item.querySelector('.checkbox_field input');
-    var title = item.querySelector('.from_addr span').innerText;
+    var sender = item.querySelector('.from_addr span').innerText;
     var subject = item.querySelector('.sorted_by_received > .row2 .subject.items_left .Email_draggable').innerText.toLowerCase();
 
-    if (itemsToDelete[title] ||
-      subject.includes('submission') ||
-      subject.includes('contact') ||
-      subject.includes('newsletter') ||
-      subject.includes('lead') ||
-      subject.includes('comment')) {
+    // Check subject/description of email for key words
+    var subjects = keywords.some(function (keyword) {
+      return subject.includes(keyword) === true;
+    });
+
+    // Actually marking them for deletion
+    if (senders[sender] || subjects) {
       keepDeleting = true;
 
       checkBox.checked = true;
@@ -60,11 +116,12 @@ function deleteSpam() {
   });
 
   // Choose whether to delete items or move to next 'page' of mail items
-  if (keepDeleting === false) {
-    nextButton.click();
-  } else {
+  if (keepDeleting) {
     deleteButton.click();
+  } else {
+    nextButton.click();
   }
 
-  setTimeout(deleteSpam, 6500);
-}
+  // Repeat forever
+  setTimeout(deleteSpam, 7000);
+})();
