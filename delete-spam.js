@@ -34,6 +34,7 @@ var senders = {
   'The Events Calendar Team': true,
   'WP Engine System': true,
   'WP Engine Team': true,
+  'The WP Engine Team': true,
   'Mail Delivery System': true,
   'The Content Team | Talkroute': true,
   'InstantSearch+': true,
@@ -72,7 +73,20 @@ var senders = {
   'ink IT': true,
   'Mailchimp Legal': true,
   'SparkPost': true,
-  'Tina Phillips': true
+  'Tina Phillips': true,
+  'LogMeIn Pro': true,
+  'AngellEYE': true,
+  'no-reply@mail.wpengine.com': true,
+  'Alex R (Fiverr Customer Support)': true,
+  'Gareth at WooCommerce': true,
+  'Fiverr Support Team (Fiverr Customer Support)': true,
+  'wordpress@bioremediesmd.com': true,
+  'Jisse Reitsma': true,
+  'ian.pitt@m.logmein.com': true,
+  'Google Search Console Team': true,
+  'LogMeIn.com Auto-Mailer': true,
+  'Kuba from LiveChat': true,
+  'Thomas at OptinMonster': true
 };
 var keywords = [
   'submission',
