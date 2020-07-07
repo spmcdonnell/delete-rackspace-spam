@@ -86,7 +86,8 @@ var senders = {
   'Google Search Console Team': true,
   'LogMeIn.com Auto-Mailer': true,
   'Kuba from LiveChat': true,
-  'Thomas at OptinMonster': true
+  'Thomas at OptinMonster': true,
+  'My Chili Store': true
 };
 var keywords = [
   'submission',
