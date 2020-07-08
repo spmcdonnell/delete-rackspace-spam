@@ -87,7 +87,12 @@ var senders = {
   'LogMeIn.com Auto-Mailer': true,
   'Kuba from LiveChat': true,
   'Thomas at OptinMonster': true,
-  'My Chili Store': true
+  'My Chili Store': true,
+  'Modern Tribe': true,
+  'Keri at OptinMonster': true,
+  'Fiverr Customer Support': true,
+  'Taco from Trello': true,
+  'Deluxe': true
 };
 var keywords = [
   'submission',
@@ -100,7 +105,12 @@ var keywords = [
   '[spam]',
   'optinmonster',
   'automatic',
-  'something i think you'
+  'something i think you',
+  'sage pay',
+  'covid-19',
+  'turbomeeting',
+  'shipworks',
+  'asana'
 ];
 
 (function deleteSpam() {
