@@ -92,7 +92,8 @@ var senders = {
   'Keri at OptinMonster': true,
   'Fiverr Customer Support': true,
   'Taco from Trello': true,
-  'Deluxe': true
+  'Deluxe': true,
+  'Angie at OptinMonster': true
 };
 var keywords = [
   'submission',
