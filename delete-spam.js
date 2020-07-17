@@ -94,7 +94,10 @@ var senders = {
   'Taco from Trello': true,
   'Deluxe': true,
   'Angie at OptinMonster': true,
-  'Think It': true
+  'Think It': true,
+  'Let\'s Encrypt Expiry Bot': true,
+  'BlogVault Support': true,
+  'Alana at WooCommerce': true
 };
 var keywords = [
   'submission',
