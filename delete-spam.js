@@ -97,7 +97,13 @@ var senders = {
   'Think It': true,
   'Let\'s Encrypt Expiry Bot': true,
   'BlogVault Support': true,
-  'Alana at WooCommerce': true
+  'Alana at WooCommerce': true,
+  'tkey hosstools.com': true,
+  'New Features | Talkroute': true,
+  'Mike at Zapier': true,
+  'Angie at OptinMonster': true,
+  'Direct CBD Online': true,
+  'Patrycja from LiveChat': true
 };
 var keywords = [
   'submission',
