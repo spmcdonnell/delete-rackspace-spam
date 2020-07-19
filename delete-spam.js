@@ -1,5 +1,5 @@
 var deleteButton = document.querySelector('.container.delete');
-var nextButton = document.querySelector('.fill_height.next');
+var nextButton = document.querySelector('.next_button');
 var keepDeleting = true;
 var senders = {
   'Hoss Tools': true,
@@ -103,7 +103,12 @@ var senders = {
   'Mike at Zapier': true,
   'Angie at OptinMonster': true,
   'Direct CBD Online': true,
-  'Patrycja from LiveChat': true
+  'Patrycja from LiveChat': true,
+  'Tina Phillips via Asana': true,
+  'Mark Arnoldy at Asana': true,
+  'Clara at WooCommerce': true,
+  'Zach Tirrell': true,
+  'Gumroad': true
 };
 var keywords = [
   'submission',
@@ -155,7 +160,12 @@ var keywords = [
   if (keepDeleting) {
     deleteButton.click();
   } else {
-    nextButton.click();
+    if (nextButton.classList.contains('disabled')) {
+      // Base case to break out of recursion
+      return;
+    } else {
+      nextButton.click();
+    }
   }
 
   // Repeat forever
