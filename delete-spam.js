@@ -108,7 +108,10 @@ var senders = {
   'Mark Arnoldy at Asana': true,
   'Clara at WooCommerce': true,
   'Zach Tirrell': true,
-  'Gumroad': true
+  'Gumroad': true,
+  'Vlad from Amasty': true,
+  'WP Engine Termination': true,
+  'C Murda': true
 };
 var keywords = [
   'submission',
