@@ -111,7 +111,8 @@ var senders = {
   'Gumroad': true,
   'Vlad from Amasty': true,
   'WP Engine Termination': true,
-  'C Murda': true
+  'C Murda': true,
+  'Browserstack': true
 };
 var keywords = [
   'submission',
@@ -171,6 +172,6 @@ var keywords = [
     }
   }
 
-  // Repeat forever
+  // Repeat until end of inbox is reached
   setTimeout(deleteSpam, 7000);
 })();
