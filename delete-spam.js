@@ -153,10 +153,13 @@ var keywords = [
 
     // Actually marking them for deletion
     if (senders[sender] || subjects) {
+      item.style.background = '#ff9797';
       keepDeleting = true;
 
       checkBox.checked = true;
       checkBox.click();
+    } else {
+      item.style.background = '#97ffb3';
     }
   });
 
