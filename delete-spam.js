@@ -49,6 +49,8 @@ var senders = {
   'Google': true,
   'Zapier Monthly': true,
   'bioRemediesMD': true,
+  'bioRemedies MD': true,
+  'Service Updates | Talkroute': true,
   'Jeffrey Shapiro': true,
   'bioREMEDIES MD': true,
   'bioREMEDIES': true,
@@ -112,7 +114,10 @@ var senders = {
   'Vlad from Amasty': true,
   'WP Engine Termination': true,
   'C Murda': true,
-  'Browserstack': true
+  'Browserstack': true,
+  'Chris Jones': true,
+  'Vishal Kothari': true,
+  'The Coronado PHX': true
 };
 var keywords = [
   'submission',
@@ -130,7 +135,8 @@ var keywords = [
   'covid-19',
   'turbomeeting',
   'shipworks',
-  'asana'
+  'asana',
+  'HH Imaging - New File Uploaded'
 ];
 
 (function deleteSpam() {
@@ -153,13 +159,10 @@ var keywords = [
 
     // Actually marking them for deletion
     if (senders[sender] || subjects) {
-      item.style.background = '#ff9797';
       keepDeleting = true;
 
       checkBox.checked = true;
       checkBox.click();
-    } else {
-      item.style.background = '#97ffb3';
     }
   });
 
