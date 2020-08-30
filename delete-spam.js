@@ -1,6 +1,10 @@
+// Grab some elements
 var deleteButton = document.querySelector('.container.delete');
 var nextButton = document.querySelector('.next_button');
-var keepDeleting = true;
+
+var keepDeleting;
+
+// Case sensitive sender list (for deletion)
 var senders = {
   'Hoss Tools': true,
   'Mantis France': true,
@@ -119,6 +123,8 @@ var senders = {
   'Vishal Kothari': true,
   'The Coronado PHX': true
 };
+
+// Subject lines to mark for deletion (these can be a substring of whole subject line - should be made lowercase)
 var keywords = [
   'submission',
   'contact',
@@ -136,7 +142,7 @@ var keywords = [
   'turbomeeting',
   'shipworks',
   'asana',
-  'HH Imaging - New File Uploaded'
+  'hh imaging - new file uploaded'
 ];
 
 (function deleteSpam() {
