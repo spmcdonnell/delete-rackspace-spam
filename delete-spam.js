@@ -142,7 +142,8 @@ var keywords = [
   'turbomeeting',
   'shipworks',
   'asana',
-  'hh imaging - new file uploaded'
+  'hh imaging - new file uploaded',
+  'scheduled your payment'
 ];
 
 (function deleteSpam() {
