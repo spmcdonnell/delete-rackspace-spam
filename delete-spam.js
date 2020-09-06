@@ -121,7 +121,11 @@ var senders = {
   'Browserstack': true,
   'Chris Jones': true,
   'Vishal Kothari': true,
-  'The Coronado PHX': true
+  'The Coronado PHX': true,
+  'WPFactory': true,
+  'BrowserStack': true,
+  'Pantheon Customer Support': true,
+  'CrashPlan for Small Business': true
 };
 
 // Subject lines to mark for deletion (these can be a substring of whole subject line - should be made lowercase)
