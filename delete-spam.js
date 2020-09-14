@@ -125,7 +125,9 @@ var senders = {
   'WPFactory': true,
   'BrowserStack': true,
   'Pantheon Customer Support': true,
-  'CrashPlan for Small Business': true
+  'CrashPlan for Small Business': true,
+  'Nathaniel Forbes': true,
+  'Zapier News': true
 };
 
 // Subject lines to mark for deletion (these can be a substring of whole subject line - should be made lowercase)
