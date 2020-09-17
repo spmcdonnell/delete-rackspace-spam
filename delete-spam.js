@@ -194,3 +194,9 @@ var keywords = [
   // Repeat until end of inbox is reached
   setTimeout(deleteSpam, 7000);
 })();
+
+
+// Break out of deleteSpam function upon 'Q' keypress
+window.addEventListener('keypress', function () {
+
+})
