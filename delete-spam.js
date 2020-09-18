@@ -2,6 +2,7 @@
 var deleteButton = document.querySelector('.container.delete');
 var nextButton = document.querySelector('.next_button');
 
+var breakout = false;
 var keepDeleting;
 
 // Case sensitive sender list (for deletion)
@@ -153,6 +154,10 @@ var keywords = [
 ];
 
 (function deleteSpam() {
+  if (breakout) {
+    return;
+  }
+
   keepDeleting = false;
 
   // Get current list of mail items
@@ -197,6 +202,10 @@ var keywords = [
 
 
 // Break out of deleteSpam function upon 'Q' keypress
-window.addEventListener('keypress', function () {
+window.addEventListener('keypress', function (event) {
+  if (event.which === 113) {
+    breakout = true;
+  }
+});
 
-})
+
