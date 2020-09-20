@@ -203,7 +203,8 @@ var keywords = [
 
 // Break out of deleteSpam function upon 'Q' keypress
 window.addEventListener('keypress', function (event) {
-  if (event.which === 113) {
+  if (event.which === 81) {
+    console.log('testing');
     breakout = true;
   }
 });
