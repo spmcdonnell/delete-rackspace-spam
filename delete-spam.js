@@ -154,6 +154,7 @@ var keywords = [
 ];
 
 (function deleteSpam() {
+  // Stop running if the quit command has been issued
   if (breakout) {
     return;
   }
@@ -161,8 +162,7 @@ var keywords = [
   keepDeleting = false;
 
   // Get current list of mail items
-  var mailNode = document.querySelector('div.Widgets_Email_Grid div.resize_overflow > table > tbody').children;
-  var mailList = Array.from(mailNode);
+  var mailList = Array.from(document.querySelector('div.Widgets_Email_Grid div.resize_overflow > table > tbody').children);
 
   // Go through and mark items for deletion
   mailList.forEach(item => {
@@ -178,7 +178,6 @@ var keywords = [
     // Actually marking them for deletion
     if (senders[sender] || subjects) {
       keepDeleting = true;
-
       checkBox.checked = true;
       checkBox.click();
     }
@@ -201,12 +200,9 @@ var keywords = [
 })();
 
 
-// Break out of deleteSpam function upon 'Q' keypress
+// Break out of deleteSpam function upon 's' keypress
 window.addEventListener('keydown', function (event) {
-  if (event.which === 83) {
-    console.log('testing');
-    breakout = true;
-  }
+  breakout = event.which === 83;
 });
 
 
