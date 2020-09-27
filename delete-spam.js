@@ -2,11 +2,11 @@ import senders from './senders';
 import keywords from './subjects';
 
 // Grab some elements
-var deleteButton = document.querySelector('.container.delete');
-var nextButton = document.querySelector('.next_button');
+let deleteButton = document.querySelector('.container.delete');
+let nextButton = document.querySelector('.next_button');
 
-var breakout = false;
-var keepDeleting;
+let breakout = false;
+let keepDeleting;
 
 (function deleteSpam() {
   // Stop running if the quit command has been issued
@@ -17,16 +17,16 @@ var keepDeleting;
   keepDeleting = false;
 
   // Get current list of mail items
-  var mailList = Array.from(document.querySelector('div.Widgets_Email_Grid div.resize_overflow > table > tbody').children);
+  let mailList = Array.from(document.querySelector('div.Widgets_Email_Grid div.resize_overflow > table > tbody').children);
 
   // Go through and mark items for deletion
   mailList.forEach(item => {
-    var checkBox = item.querySelector('.checkbox_field input');
-    var sender = item.querySelector('.from_addr span').innerText;
-    var subject = item.querySelector('.sorted_by_received > .row2 .subject.items_left .Email_draggable').innerText.toLowerCase();
+    let checkBox = item.querySelector('.checkbox_field input');
+    let sender = item.querySelector('.from_addr span').innerText;
+    let subject = item.querySelector('.sorted_by_received > .row2 .subject.items_left .Email_draggable').innerText.toLowerCase();
 
     // Check subject/description of email for key words
-    var subjects = keywords.some(function (keyword) {
+    let subjects = keywords.some(keyword => {
       return subject.includes(keyword) === true;
     });
 
@@ -56,7 +56,7 @@ var keepDeleting;
 
 
 // Break out of deleteSpam function upon 's' keypress
-window.addEventListener('keydown', function (event) {
+window.addEventListener('keydown', event => {
   breakout = event.which === 83;
 });
 
