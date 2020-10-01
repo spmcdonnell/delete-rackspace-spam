@@ -57,7 +57,8 @@ let keepDeleting;
 
 // Break out of deleteSpam function upon 's' keypress
 window.addEventListener('keydown', event => {
-  breakout = event.which === 83;
+  console.log(event);
+  breakout = event.key === 's';
 });
 
 
