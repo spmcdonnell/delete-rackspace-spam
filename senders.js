@@ -121,7 +121,9 @@ var senders = {
     'Pantheon Customer Support': true,
     'CrashPlan for Small Business': true,
     'Nathaniel Forbes': true,
-    'Zapier News': true
+    'Zapier News': true,
+    'Iconic': true,
+    'Anna at Zapier': true
 };
 
 export default senders;
