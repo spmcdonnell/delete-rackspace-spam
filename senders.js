@@ -123,7 +123,11 @@ var senders = {
     'Nathaniel Forbes': true,
     'Zapier News': true,
     'Iconic': true,
-    'Anna at Zapier': true
+    'Anna at Zapier': true,
+    '25% off Sleep Capsules': true,
+    'Ashley R via Asana': true,
+    'Dustin at Asana': true
+
 };
 
 export default senders;
