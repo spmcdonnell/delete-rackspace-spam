@@ -1,5 +1,5 @@
 // Subject lines to mark for deletion (these can be a substring of whole subject line - should be made lowercase)
-var keywords = [
+let keywords = [
     'submission',
     'contact',
     'newsletter',

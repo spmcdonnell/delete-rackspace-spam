@@ -1,5 +1,5 @@
 // Case sensitive sender list (for deletion)
-var senders = {
+let senders = {
     'Hoss Tools': true,
     'Mantis France': true,
     'Mantis': true,
